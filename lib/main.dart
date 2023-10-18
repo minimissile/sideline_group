@@ -1,9 +1,12 @@
 import 'dart:io';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'config/color.dart';
 import 'global.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'navigator/tab_navigator.dart';
 import 'provider/providers.dart';
 import 'pages/index/index_page.dart';
 
@@ -41,12 +44,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // UI适配初始化
+    ScreenUtil.init(
+      context,
+      designSize: const Size(390, 855), // 传入设计稿尺寸
+      minTextAdapt: true, // 最小文本适应
+      splitScreenMode: true, // 分屏模式
+    );
+
     return MultiProvider(
       providers: mainProviders,
       child: MaterialApp(
         title: '副业圈',
         debugShowCheckedModeBanner: false,
-        home: const IndexPage(),
+        home: const TabNavigator(),
         theme: ThemeData(
           primarySwatch: customPrimaryColor,
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
