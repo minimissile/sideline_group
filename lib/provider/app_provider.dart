@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
+// import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:sideline_group/utils/logger_util.dart';
 
 /// App状态管理
@@ -8,10 +8,10 @@ class AppProvider extends ChangeNotifier {
 
   bool _showItineraryDot = false;
 
-  ConnectivityResult _internetStatus = ConnectivityResult.none;
+  // ConnectivityResult _internetStatus = ConnectivityResult.none;
 
   /// 获取网络状态
-  ConnectivityResult get internetStatus => _internetStatus;
+  // ConnectivityResult get internetStatus => _internetStatus;
 
   /// 是否显示行程提示小红点
   bool get showItineraryDot => _showItineraryDot;
@@ -26,12 +26,12 @@ class AppProvider extends ChangeNotifier {
   }
 
   /// 更新网络状态
-  void updateInternetStatus(ConnectivityResult newStatus) {
-    if (_internetStatus != newStatus) {
-      _internetStatus = newStatus;
-      notifyListeners();
-    }
-  }
+  // void updateInternetStatus(ConnectivityResult newStatus) {
+  //   if (_internetStatus != newStatus) {
+  //     _internetStatus = newStatus;
+  //     notifyListeners();
+  //   }
+  // }
 
   /// 设置是否显示行程提示小红点
   setShowItineraryDot(bool val) {
