@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'config/color.dart';
 import 'global.dart';
 import 'package:flutter/material.dart';

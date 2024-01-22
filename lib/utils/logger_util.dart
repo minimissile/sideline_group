@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:developer' as dev;
 import 'package:sideline_group/global.dart';
 
@@ -12,10 +13,25 @@ class Logger {
   }
 
   /// 自定义log
-  static void log(String message, {title = 'Logger'}) {
+  static void log(String message, {String title = 'Logger'}) {
     if (!_isEnable) {
       return;
     }
-    dev.log(message, name: title);
+
+    dev.log(_formatMessage(message), name: title);
+  }
+
+  /// 格式化JSON字符串
+  static String _formatMessage(String message) {
+    try {
+      // 尝试解析JSON
+      var decodedJson = jsonDecode(message);
+      // 使用JsonEncoder来格式化JSON
+      var prettyJson = const JsonEncoder.withIndent('  ').convert(decodedJson);
+      return prettyJson;
+    } catch (_) {
+      // 如果解析失败，返回原始消息
+      return message;
+    }
   }
 }
