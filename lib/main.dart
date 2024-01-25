@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 import 'navigator/tab_navigator.dart';
 import 'provider/providers.dart';
 import 'pages/index/index_page.dart';
+import 'router/routers.dart';
 
 void main() {
   // 在Flutter应用程序启动时确保Widgets框架的初始化
@@ -56,7 +57,8 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: '副业圈',
         debugShowCheckedModeBanner: false,
-        home: const TabNavigator(),
+        initialRoute: '/login',
+        routes: staticRoutes,
         theme: ThemeData(
           primarySwatch: customPrimaryColor,
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

@@ -50,6 +50,16 @@ class UserProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// 更新用户信息
+  Future<void> editUserInfo(UserModel value) async {
+    var prefs = Cache.getInstance();
+    await prefs.setJSON(Storage.userProfile, value);
+    _userInfo = value;
+    notifyListeners();
+  }
+
+
+
   /// 设置是否首次登录状态
   Future<void> setFirstTimeLogin(bool value) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();

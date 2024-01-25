@@ -32,6 +32,11 @@ class NavigatorUtil {
     removeAndPush(context, '/login');
   }
 
+  /// 登录
+  static login(BuildContext context) {
+    removeAndPush(context, '/tabbar');
+  }
+
   /// 获取当前正在展示的路由
   // 前提目标路由设置了name
   static getCurrentRoute(BuildContext context) {
