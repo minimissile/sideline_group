@@ -33,7 +33,7 @@ class EasyLoadingTheme {
   /// boxShadow color of loading
   static List<BoxShadow>? get boxShadow =>
       CustomToast.instance.loadingStyle == EasyLoadingStyle.custom
-          ? CustomToast.instance.boxShadow ?? [BoxShadow()]
+          ? CustomToast.instance.boxShadow ?? [const BoxShadow()]
           : null;
 
   /// font color of status
