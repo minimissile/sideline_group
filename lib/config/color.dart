@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 /// 应用色彩体系
 class AppColor {
   /// 主要文字颜色
-  static Color primaryText = const Color(0xff382c22);
+  static Color primaryTextColor = const Color(0xff382c22);
 
   /// 次级文字颜色
   static Color secondaryTextColor = const Color(0xff606060);

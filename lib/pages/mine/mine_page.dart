@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sideline_group/utils/navigator_util.dart';
+import 'package:sideline_group/widgets/appbar_widget.dart';
+import 'package:sideline_group/widgets/button_widget.dart';
 
 /// 我的
 class MinePage extends StatefulWidget {
@@ -9,16 +12,20 @@ class MinePage extends StatefulWidget {
 }
 
 class _MinePageState extends State<MinePage> {
+  void _handleLogout() {
+    NavigatorUtil.logout(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('我的'),
-      ),
-      body: const Column(
-        children: [
-          Text("我的")
-        ],
+      appBar: const AppBarWidget(title: '我的',),
+      body: Center(
+        child: Column(
+          children: [
+            Button(onPressed: _handleLogout, title: '退出登录'),
+          ],
+        ),
       ),
     );
   }

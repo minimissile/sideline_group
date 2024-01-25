@@ -6,6 +6,8 @@ import 'package:sideline_group/utils/system_util.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 
+import 'db/cache.dart';
+
 /// 全局配置
 class Global {
   /// 发布渠道
@@ -47,6 +49,9 @@ class Global {
 
     // 本地缓存初始化
     await CacheManager.preInit();
+
+    // 本地缓存初始化
+    await Cache.preInit();
 
     // 读取设备信息
     DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();

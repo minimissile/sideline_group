@@ -114,7 +114,7 @@ class _ButtonState extends State<Button> {
                 padding: const EdgeInsets.only(right: 10),
                 child: SpinKitFadingCircle(
                   size: 30,
-                  color: AppColor.primaryText,
+                  color: AppColor.primaryTextColor,
                 ),
               ),
             if (widget.prefix != null)
@@ -127,7 +127,7 @@ class _ButtonState extends State<Button> {
               style: TextStyle(
                 fontSize: setFontSize(20),
                 fontWeight: FontWeight.w700,
-                color: widget.disable ? AppColor.secondaryTextColor : AppColor.primaryText,
+                color: widget.disable ? AppColor.secondaryTextColor : AppColor.primaryTextColor,
               ),
             )
           ],

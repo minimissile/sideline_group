@@ -9,6 +9,7 @@ import 'navigator/tab_navigator.dart';
 import 'provider/providers.dart';
 import 'pages/index/index_page.dart';
 import 'router/routers.dart';
+import 'widgets/toast/custom_toast.dart';
 
 void main() {
   // 在Flutter应用程序启动时确保Widgets框架的初始化
@@ -58,6 +59,7 @@ class MyApp extends StatelessWidget {
         title: '副业圈',
         debugShowCheckedModeBanner: false,
         initialRoute: '/login',
+        builder: CustomToast.init(),
         routes: staticRoutes,
         theme: ThemeData(
           primarySwatch: customPrimaryColor,

@@ -43,9 +43,9 @@ class UserProvider extends ChangeNotifier {
   }
 
   /// 保存登录的用户信息
-  Future<void> setUserInfo(UserModel value) async {
+  void setUserInfo(UserModel value)  {
     var prefs = Cache.getInstance();
-    await prefs.setJSON(Storage.userProfile, value);
+    prefs.setJSON(Storage.userProfile, value);
     _userInfo = value;
     notifyListeners();
   }
